@@ -14,7 +14,7 @@ from traceback import print_exc
 def start(update, context):
     """Send a message when the command /start is issued."""
     update.message.reply_text(
-        'Hi! Gulshan\nWhat You want me to do ?\nOCR an Image containing\n1.English')
+        'Hi! Gulshan\nWhat You want me to do ?\nOCR an Image containing')
     # update.message.reply_text(
     #     'https://stackoverflow.com/questions/12277933/send-data-from-a-textbox-into-flask')
 
@@ -24,12 +24,12 @@ def start(update, context):
 #     check_lang = int(update.message.text)
 #     print(update.message.text)
 #     if(check_lang == 1):
-#         language = 'eng'
+#         language = 'hin'
 #         # convert_image(update,context,language)
 #         # print(language)
 #         return language
 #     else:
-#         language = 'hin'
+#         language = 'eng'
 #         return language
 #         # update.message.reply_text(update.message.text)
 #         # print("got something baby")
@@ -45,13 +45,13 @@ def convert_image(update, context):
     # using tesseract.
     # language = checkif
     try:
-        update.message.reply_text("trying............................")
+        update.message.reply_text("wait")
         ocred_stuff = (pytesseract.image_to_string(
             # Image.open(file_name), lang='hin'))
             Image.open(file_name)))
         if ocred_stuff is not None:
             update.message.reply_text(ocred_stuff)
-            update.message.reply_text("done buddy !")
+            update.message.reply_text("done!")
         else:
             update.message.reply_text(
                 "Sorry I can't understand the texts written in image.")
